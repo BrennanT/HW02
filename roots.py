@@ -37,25 +37,39 @@ def get_number_of_roots(coeff1, coeff2, coeff3):
     num_of_roots_equation = coeff1 ** 2 - 4 * coeff2 * coeff3
 
     if num_of_roots_equation < 0:
-        raw_number_of_roots = 0
+        number_of_roots = 0
 
     if num_of_roots_equation == 0:
-        raw_number_of_roots = 1
+        number_of_roots = 1
 
     if num_of_roots_equation > 0:
-        raw_number_of_roots = 2
+        number_of_roots = 2
 
-    return raw_number_of_roots
+    if number_of_roots == 0:
+        print('No roots.')
+
+    if number_of_roots == 1:
+        print('One root.')
+
+    if number_of_roots == 2:
+        print('Two roots.')
+
+
+    return number_of_roots
 
 
 def get_roots( coeff1, coeff2, coeff3, number_of_roots):
     """
-
+    Uses quadratic equation to find the roots. Depending on how many roots there are.
     :param coeff1:
     :param coeff2:
     :param coeff3:
     :return:
     """
+
+
+    x1 = (-b+math.sqrt((b**2)-(4*(a*c))))/(2*a)
+    x2 = (-b-math.sqrt((b**2)-(4*(a*c))))/(2*a)
 
 
 def main():
@@ -67,14 +81,6 @@ def main():
 
     number_of_roots = get_number_of_roots(a, b, c)
 
-    if number_of_roots == 0:
-        print('No roots.')
-
-    if number_of_roots == 1:
-        print('One root.')
-
-    if number_of_roots == 2:
-        print('Two roots.')
 
 
 main()
